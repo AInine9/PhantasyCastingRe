@@ -1,0 +1,7 @@
+
+*.xml
+*.jar
+*.iml
+.gitattributes
+*.class
+target/classes/plugin.yml
