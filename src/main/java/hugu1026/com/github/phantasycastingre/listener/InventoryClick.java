@@ -13,64 +13,47 @@ public class InventoryClick implements Listener {
 
     @EventHandler
     public void InventoryClick(InventoryClickEvent event) {
-        if (event.getInventory() == null
-                || !(event.getClickedInventory().getHolder() instanceof CastingGui)) {
-            return;
-        }
+        Inventory inventory = event.getInventory();
+        if (inventory == null) return;
 
-        if (!(event.getWhoClicked() instanceof Player)) {
-            return;
-        }
+        if (!(inventory.getHolder() instanceof CastingGui)) return;
 
-        switch (event.getSlot()) {
-            case 0:
-            case 1:
-            case 2:
-            case 3:
-            case 4:
-            case 5:
-            case 6:
-            case 7:
-            case 8:
-                break;
-            default:
+        if (!(event.getWhoClicked() instanceof Player)) return;
+
+        CastingGui castingGui = (CastingGui) event.getInventory().getHolder();
+        ItemStack clickedItem = event.getCurrentItem();
+        String type = null;
+
+        if (clickedItem != null) {
+            if (clickedItem.equals(castingGui.getSWORD())) {
+                type = "Weapon";
+            }
+            else if (clickedItem.equals(castingGui.getHELMET())) {
+                type = "Helmet";
+            }
+            else if (clickedItem.equals(castingGui.getCHEST_PLATE())) {
+                type = "ChestPlate";
+            }
+            else if (clickedItem.equals(castingGui.getLEGGINGS())) {
+                type = "Leggings";
+            }
+            else if (clickedItem.equals(castingGui.getBOOTS())) {
+                type = "Boots";
+            }
+            else if (clickedItem.equals(castingGui.getGLASS())) {
                 event.setCancelled(true);
+                return;
+            }
+            else {
+                return;
+            }
+            event.setCancelled(true);
 
-                Casting casting = new Casting();
+            Casting casting = new Casting();
 
-                Player player = (Player) event.getWhoClicked();
-                CastingGui castingGui = (CastingGui) event.getInventory().getHolder();
-                ItemStack clickedItem = event.getCurrentItem();
-                Inventory inventory = event.getInventory();
-                String type = null;
+            Player player = (Player) event.getWhoClicked();
 
-                if (clickedItem.equals(castingGui.getSWORD())) {
-                    type = "Weapon";
-                }
-
-                if (clickedItem.equals(castingGui.getHELMET())) {
-                    type = "Helmet";
-                }
-
-                if (clickedItem.equals(castingGui.getCHEST_PLATE())) {
-                    type = "ChestPlate";
-                }
-
-                if (clickedItem.equals(castingGui.getLEGGINGS())) {
-                    type = "Leggings";
-                }
-
-                if (clickedItem.equals(castingGui.getBOOTS())) {
-                    type = "Boots";
-                }
-
-                if (clickedItem.equals(castingGui.getGLASS())) {
-                    return;
-                }
-
-                casting.onCasting(inventory, type, player);
-
-                break;
+            casting.onCasting(inventory, type, player);
         }
     }
 }
