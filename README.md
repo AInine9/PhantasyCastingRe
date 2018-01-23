@@ -1,1 +1,4 @@
 # PhantasyCastingRe
+===
+##Licence
+No Licence
