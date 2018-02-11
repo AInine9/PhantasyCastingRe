@@ -160,6 +160,6 @@ public class Inscript implements Listener {
             player.getInventory().removeItem(player.getInventory().getItemInMainHand());
         }
 
-        player.getInventory().addItem(product);
+        player.getWorld().dropItem(player.getLocation().add(0, 0.5, 0), product).setPickupDelay(0);
     }
 }

@@ -8,6 +8,7 @@ public class materialList {
     private static Map<String, Map<Integer, Integer>> materialList = new HashMap<>();
 
     static {
+        //(name, power or defence, durability or sharpness)
         materialList.put("石ころ", new HashMap<>());
         materialList.get("石ころ").put(2, 1);
 
