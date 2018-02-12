@@ -27,24 +27,18 @@ public class InventoryClick implements Listener {
         if (clickedItem != null) {
             if (clickedItem.equals(castingGui.getSWORD())) {
                 type = "Weapon";
-            }
-            else if (clickedItem.equals(castingGui.getHELMET())) {
+            } else if (clickedItem.equals(castingGui.getHELMET())) {
                 type = "Helmet";
-            }
-            else if (clickedItem.equals(castingGui.getCHEST_PLATE())) {
+            } else if (clickedItem.equals(castingGui.getCHEST_PLATE())) {
                 type = "ChestPlate";
-            }
-            else if (clickedItem.equals(castingGui.getLEGGINGS())) {
+            } else if (clickedItem.equals(castingGui.getLEGGINGS())) {
                 type = "Leggings";
-            }
-            else if (clickedItem.equals(castingGui.getBOOTS())) {
+            } else if (clickedItem.equals(castingGui.getBOOTS())) {
                 type = "Boots";
-            }
-            else if (clickedItem.equals(castingGui.getGLASS())) {
+            } else if (clickedItem.equals(castingGui.getGLASS())) {
                 event.setCancelled(true);
                 return;
-            }
-            else {
+            } else {
                 return;
             }
             event.setCancelled(true);

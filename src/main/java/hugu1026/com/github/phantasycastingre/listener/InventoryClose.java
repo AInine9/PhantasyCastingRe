@@ -1,4 +1,3 @@
-
 package hugu1026.com.github.phantasycastingre.listener;
 
 import hugu1026.com.github.phantasycastingre.gui.CastingGui;
