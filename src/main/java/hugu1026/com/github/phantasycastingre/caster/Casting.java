@@ -2,6 +2,8 @@ package hugu1026.com.github.phantasycastingre.caster;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.Particle;
+import org.bukkit.Sound;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 import org.bukkit.entity.Player;
@@ -95,5 +97,7 @@ public class Casting extends Caster {
 
         player.getInventory().addItem(mass);
         player.sendMessage(ChatColor.GOLD + "入手した金属の塊を手に持って積沸し台に視点を合わし、何度まで上昇させるかをチャットに入力しよう");
+        player.playSound(player.getLocation(), Sound.BLOCK_ANVIL_LAND, 1, (float) 0.8);
+        player.getWorld().spawnParticle(Particle.REDSTONE, player.getLocation().add(0, 0.5, 0), 100);
     }
 }

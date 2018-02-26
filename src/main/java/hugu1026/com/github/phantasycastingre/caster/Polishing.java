@@ -2,6 +2,8 @@ package hugu1026.com.github.phantasycastingre.caster;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.Particle;
+import org.bukkit.Sound;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 import org.bukkit.entity.Player;
@@ -27,6 +29,8 @@ public class Polishing extends Caster {
                     player.getInventory().getItemInMainHand().setItemMeta(meta);
 
                     player.sendMessage(ChatColor.GOLD + "素材が完成した。心を込めて、銘入れ台をクリックしよう。");
+                    player.playSound(player.getLocation(), Sound.BLOCK_ANVIL_USE, 1, (float) 1.8);
+                    player.getWorld().spawnParticle(Particle.CRIT_MAGIC, player.getLocation().add(0, 0.5, 0), 50);
                 } else {
                     player.sendMessage(ChatColor.RED + "前の工程を飛ばしているぞ！");
                 }

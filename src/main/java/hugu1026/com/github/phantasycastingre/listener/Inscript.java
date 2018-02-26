@@ -5,6 +5,8 @@ import hugu1026.com.github.phantasycastingre.weapon.*;
 import net.minecraft.server.v1_10_R1.*;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.Particle;
+import org.bukkit.Sound;
 import org.bukkit.craftbukkit.v1_10_R1.inventory.CraftItemStack;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -153,6 +155,8 @@ public class Inscript implements Listener {
 
         //プレイヤーへ渡す
         player.sendMessage(ChatColor.GOLD + "鋳造に成功した！");
+        player.playSound(player.getLocation(), Sound.BLOCK_ANVIL_LAND, 1, (float) 0.6);
+        player.getWorld().spawnParticle(Particle.VILLAGER_HAPPY, player.getLocation().add(0, 0.5, 0), 10);
 
         if (player.getInventory().getItemInMainHand().getAmount() > 1) {
             player.getInventory().getItemInMainHand().setAmount(player.getInventory().getItemInMainHand().getAmount() - 1);

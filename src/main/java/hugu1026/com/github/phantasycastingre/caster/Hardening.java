@@ -2,6 +2,8 @@ package hugu1026.com.github.phantasycastingre.caster;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.Particle;
+import org.bukkit.Sound;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
@@ -28,6 +30,8 @@ public class Hardening extends Caster {
                     player.getInventory().getItemInMainHand().setItemMeta(meta);
 
                     player.sendMessage(ChatColor.GOLD + "最後に研磨台に視線を合わせ、研磨を何回行うかを決めよう");
+                    player.playSound(player.getLocation(), Sound.ENTITY_ZOMBIE_VILLAGER_CURE, 1, (float) 1.6);
+                    player.getWorld().spawnParticle(Particle.SMOKE_LARGE, player.getLocation().add(0, 0.5, 0), 20);
                 } else {
                     player.sendMessage(ChatColor.RED + "前の工程を飛ばしているぞ！");
                 }

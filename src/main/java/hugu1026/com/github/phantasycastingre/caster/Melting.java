@@ -2,6 +2,8 @@ package hugu1026.com.github.phantasycastingre.caster;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.Particle;
+import org.bukkit.Sound;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 import org.bukkit.entity.Player;
@@ -28,6 +30,8 @@ public class Melting extends Caster {
                 }
 
                 player.sendMessage(ChatColor.GOLD + "次は金床に視線を合わし、叩く回数を決めよう");
+                player.playSound(player.getLocation(), Sound.ENTITY_GHAST_SHOOT, 1, (float) 0.6);
+                player.getWorld().spawnParticle(Particle.LAVA, player.getLocation().add(0, 0.5, 0), 20);
             }
         }
     }
