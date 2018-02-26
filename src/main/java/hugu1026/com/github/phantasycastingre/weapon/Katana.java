@@ -26,7 +26,7 @@ public class Katana extends Weapon {
     protected int PowerDefendCalc(int original_power, int melting) {
         //変域外
         if (melting <= 0 || melting >= 1500) {
-            power_defend = 1;
+            power_defend = 30;
         } //変域内
         else {
             power_defend = (int) (-10 + 0.227 * melting + -1.51e-04 * Math.pow(melting, 2)) + original_power;
@@ -34,7 +34,7 @@ public class Katana extends Weapon {
 
         //計算結果が負
         if (power_defend < 0) {
-            power_defend = 1;
+            power_defend = 30;
         }
         return power_defend;
     }
@@ -43,12 +43,12 @@ public class Katana extends Weapon {
     protected int SharpDurabilityCalc(int original_sharpness, int polishing) {
 
         if (polishing <= 0 || polishing >= 2000) {
-            sharp_durability = 1;
+            sharp_durability = 30;
         } else {
             sharp_durability = (int) (-20 + 0.34 * polishing + -1.7e-04 * Math.pow(polishing, 2)) + original_sharpness;
         }
         if (sharp_durability < 0) {
-            sharp_durability = 0;
+            sharp_durability = 30;
         }
         return sharp_durability;
     }
