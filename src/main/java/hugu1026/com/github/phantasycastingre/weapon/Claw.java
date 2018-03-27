@@ -26,15 +26,15 @@ public class Claw extends Weapon {
     protected int PowerDefendCalc(int original_power, int melting) {
         //変域外
         if (melting <= 0 || melting >= 1000) {
-            power_defend = 30;
+            power_defend = 5;
         } //変域内
         else {
-            power_defend = (int) (-20 + 0.12 * melting + -1.2e-04 * Math.pow(melting, 2)) + original_power;
+            power_defend = (int) (-2.22e-16 + 4e-03 * melting + -4e-06 * Math.pow(melting, 2)) + original_power;
         }
 
         //計算結果が負
         if (power_defend < 0) {
-            power_defend = 30;
+            power_defend = 5;
         }
         return power_defend;
     }

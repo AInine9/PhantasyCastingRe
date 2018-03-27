@@ -22,15 +22,15 @@ public class Armour extends Weapon {
     protected int PowerDefendCalc(int original_power, int melting) {
         //変域外
         if (melting <= 0 || melting >= 2000) {
-            power_defend = 30;
+            power_defend = 3;
         } //変域内
         else {
-            power_defend = (int) (0 + 0.133 * melting + -8.89e-05 * Math.pow(melting, 2)) + original_power;
+            power_defend = (int) (2.22e-16 + 0.0133 * melting + -8.89e-06 * Math.pow(melting, 2)) + original_power;
         }
 
         //計算結果が負
         if (power_defend < 0) {
-            power_defend = 30;
+            power_defend = 3;
         }
         return power_defend;
     }

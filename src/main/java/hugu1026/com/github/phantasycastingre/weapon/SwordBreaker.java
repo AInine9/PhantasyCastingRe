@@ -26,15 +26,15 @@ public class SwordBreaker extends Weapon {
     protected int PowerDefendCalc(int original_power, int melting) {
         //変域外
         if (melting <= 0 || melting >= 1000) {
-            power_defend = 30;
+            power_defend = 5;
         } //変域内
         else {
-            power_defend = (int) (-1.78e-14 + 0.2 * melting + -2e-04 * Math.pow(melting, 2)) + original_power;
+            power_defend = (int) (-1.33e-15 + 0.02 * melting + -2e-05 * Math.pow(melting, 2)) + original_power;
         }
 
         //計算結果が負
         if (power_defend < 0) {
-            power_defend = 30;
+            power_defend = 5;
         }
         return power_defend;
     }

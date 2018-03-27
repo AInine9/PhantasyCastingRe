@@ -65,9 +65,8 @@ public class Casting extends Caster {
                     for (int keyy : materialPerformance.keySet()) {
                         materialPower = keyy;
                         materialSharpness = materialPerformance.get(keyy);
-                        int random = new java.util.Random().nextInt(3) + 1;
-                        original_power = materialPower + random + original_power;
-                        original_sharpness = materialSharpness + random + original_power;
+                        original_power = materialPower + original_power;
+                        original_sharpness = materialSharpness + original_power;
                     }
                 }
             }

@@ -26,15 +26,15 @@ public class WarHammer extends Weapon {
     protected int PowerDefendCalc(int original_power, int melting) {
         //変域外
         if (melting <= 0 || melting >= 1500) {
-            power_defend = 30;
+            power_defend = 5;
         } //変域内
         else {
-            power_defend = (int) (-50 + 0.24 * melting + -1.6e-04 * Math.pow(melting, 2)) + original_power;
+            power_defend = (int) (4.44e-16 + 0.0267 * melting + -1.78e-05 * Math.pow(melting, 2)) + original_power;
         }
 
         //計算結果が負
         if (power_defend < 0) {
-            power_defend = 30;
+            power_defend = 5;
         }
         return power_defend;
     }

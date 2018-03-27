@@ -29,7 +29,7 @@ public class Rapier extends Weapon {
             power_defend = 30;
         } //変域内
         else {
-            power_defend = (int) (-10 + 0.12 * melting + -1.2e-04 * Math.pow(melting, 2)) + original_power;
+            power_defend = (int) (-4.44e-16 + 8e-03 * melting + -8e-06 * Math.pow(melting, 2)) + original_power;
         }
 
         //計算結果が負

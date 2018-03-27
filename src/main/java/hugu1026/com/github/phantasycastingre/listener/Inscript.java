@@ -2,12 +2,12 @@ package hugu1026.com.github.phantasycastingre.listener;
 
 import hugu1026.com.github.phantasycastingre.event.InscriptEvent;
 import hugu1026.com.github.phantasycastingre.weapon.*;
-import net.minecraft.server.v1_10_R1.*;
+import net.minecraft.server.v1_12_R1.*;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.Particle;
 import org.bukkit.Sound;
-import org.bukkit.craftbukkit.v1_10_R1.inventory.CraftItemStack;
+import org.bukkit.craftbukkit.v1_12_R1.inventory.CraftItemStack;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -118,7 +118,7 @@ public class Inscript implements Listener {
         meta.setLore(lore);
         product.setItemMeta(meta);
 
-        net.minecraft.server.v1_10_R1.ItemStack nmsItem =
+        net.minecraft.server.v1_12_R1.ItemStack nmsItem =
                 CraftItemStack.asNMSCopy(product);
         NBTTagCompound nbtTag = nmsItem.getTag();
         if (nbtTag == null) {

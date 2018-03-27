@@ -5,3 +5,4 @@
 .gitattributes
 *.class
 target/classes/plugin.yml
+src/main/java/META-INF/MANIFEST.MF
