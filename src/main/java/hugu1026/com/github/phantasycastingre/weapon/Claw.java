@@ -10,7 +10,6 @@ public class Claw extends Weapon {
     private int sharp_durability;
 
     public Claw(int original_power, int melting, int original_sharpness, int polishing) {
-
         IntBinaryOperator func1 = this::PowerDefendCalc;
         IntBinaryOperator func2 = this::SharpDurabilityCalc;
         power_defend = func1.applyAsInt(original_power, melting);
@@ -20,6 +19,8 @@ public class Claw extends Weapon {
         setAttackSpeed(attackSpeed);
         setPower_defend(power_defend);
         setSharp_durability(sharp_durability);
+
+
     }
 
     @Override
@@ -29,14 +30,17 @@ public class Claw extends Weapon {
             power_defend = 5;
         } //変域内
         else {
-            power_defend = (int) (-2.22e-16 + 4e-03 * melting + -4e-06 * Math.pow(melting, 2)) + original_power;
+            power_defend = (int) (-15 + 0.064 * melting + -6.4e-05 * Math.pow(melting, 2)) + original_power;
         }
 
         //計算結果が負
         if (power_defend < 0) {
             power_defend = 5;
         }
-        return power_defend;
+
+        super.setCorrectionValueList(-5, -20, -30, -40, -60, -75, -100, -120, -140, -150, -180, -200, -350, -600, -800, -900);
+
+        return makeValueToFair(power_defend);
     }
 
     @Override

@@ -29,7 +29,7 @@ public class Dagger extends Weapon {
             power_defend = 5;
         } //変域内
         else {
-            power_defend = (int) (0 + 5.33e-03 * melting + -3.56e-06 * Math.pow(melting, 2)) + original_power;
+            power_defend = (int) (-10 + 0.032 * melting + -2.13e-05 * Math.pow(melting, 2)) + original_power;
         }
 
         //計算結果が負

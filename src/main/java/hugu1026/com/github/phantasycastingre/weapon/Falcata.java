@@ -29,7 +29,7 @@ public class Falcata extends Weapon {
             power_defend = 5;
         } //変域内
         else {
-            power_defend = (int) (0 + 2.67e-03 * melting + -1.78e-06 * Math.pow(melting, 2)) + original_power;
+            power_defend = (int) (-5 + 0.016 * melting + -1.07e-05 * Math.pow(melting, 2)) + original_power;
         }
 
         //計算結果が負
