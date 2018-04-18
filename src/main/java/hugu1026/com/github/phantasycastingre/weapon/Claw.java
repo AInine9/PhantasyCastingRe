@@ -5,7 +5,7 @@ import java.util.function.IntBinaryOperator;
 public class Claw extends Weapon {
 
     private double speed = 0.02;
-    private double attackSpeed = 1.2;
+    private double attackSpeed = 1.1;
     private int power_defend;
     private int sharp_durability;
 
@@ -37,10 +37,7 @@ public class Claw extends Weapon {
         if (power_defend < 0) {
             power_defend = 5;
         }
-
-        super.setCorrectionValueList(-5, -20, -30, -40, -60, -75, -100, -120, -140, -150, -180, -200, -350, -600, -800, -900);
-
-        return makeValueToFair(power_defend);
+        return power_defend;
     }
 
     @Override

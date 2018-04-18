@@ -5,7 +5,7 @@ import java.util.function.IntBinaryOperator;
 public class Dagger extends Weapon {
 
     private double speed = 0.02;
-    private double attackSpeed = 1.2;
+    private double attackSpeed = 1.3;
     private int power_defend;
     private int sharp_durability;
 
