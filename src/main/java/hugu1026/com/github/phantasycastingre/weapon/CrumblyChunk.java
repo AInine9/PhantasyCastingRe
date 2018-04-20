@@ -4,7 +4,7 @@ import java.util.function.IntBinaryOperator;
 
 public class CrumblyChunk extends Weapon {
 
-    private double speed = 1;
+    private double speed = 0;
     private double attackSpeed = 1;
     private int power_defend;
     private int sharp_durability;

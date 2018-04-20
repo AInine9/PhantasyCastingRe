@@ -19,8 +19,6 @@ public class Claw extends Weapon {
         setAttackSpeed(attackSpeed);
         setPower_defend(power_defend);
         setSharp_durability(sharp_durability);
-
-
     }
 
     @Override
@@ -37,6 +35,9 @@ public class Claw extends Weapon {
         if (power_defend < 0) {
             power_defend = 5;
         }
+
+        power_defend = (int) (0.333 * power_defend);
+
         return power_defend;
     }
 

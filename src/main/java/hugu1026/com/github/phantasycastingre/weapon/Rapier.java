@@ -36,6 +36,9 @@ public class Rapier extends Weapon {
         if (power_defend < 0) {
             power_defend = 30;
         }
+
+        power_defend = (int) (0.556 * power_defend);
+
         return power_defend;
     }
 

@@ -36,6 +36,9 @@ public class Axe extends Weapon {
         if (power_defend < 0) {
             power_defend = 5;
         }
+
+        power_defend = (int) (1.0 * power_defend);
+
         return power_defend;
     }
 
