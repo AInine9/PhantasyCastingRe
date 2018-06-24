@@ -17,6 +17,9 @@ public class materialList {
 
         materialList.put("酸化したアルミ", new HashMap<>());
         materialList.get("酸化したアルミ").put(2, 2);
+
+        materialList.put("すごいやつ", new HashMap<>());
+        materialList.get("すごいやつ").put(100, 100);
     }
 
     public static Map<String, Map<Integer, Integer>> getMaterialList() {
